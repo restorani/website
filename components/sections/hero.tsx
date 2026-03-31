@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Hero() {
   return (
@@ -68,7 +69,7 @@ export function Hero() {
           <div className="relative">
             <div className="relative bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
               {/* Mock POS Interface */}
-              <div className="bg-foreground/5 px-4 py-3 border-b border-border flex items-center gap-2">
+              {/* <div className="bg-foreground/5 px-4 py-3 border-b border-border flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-destructive/60" />
                 <div className="w-3 h-3 rounded-full bg-accent" />
                 <div className="w-3 h-3 rounded-full bg-primary" />
@@ -101,7 +102,8 @@ export function Hero() {
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                   Naplati
                 </Button>
-              </div>
+              </div> */}
+              <Image src="/orderasite1.png" alt="ORDERA POS Mockup" width={600} height={400} className="w-full h-auto object-cover" />
             </div>
             
             {/* Floating notification card */}

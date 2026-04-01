@@ -17,20 +17,19 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="mt-3 flex h-16 items-center justify-between rounded-full border border-white/50 bg-background/70 px-5 shadow-[0_16px_48px_rgba(15,23,42,0.08)] backdrop-blur-xl lg:mt-4 lg:h-20 lg:px-7">
           <Link href="/" className="">
-            <Image src="/ordera-Photoroom.png" alt="ORDERA Logo" width={240} height={20} className="-ml-7.5" />
+            <Image src="/ordera-Photoroom.png" alt="ORDERA Logo" width={240} height={20} className="-ml-7.5 drop-shadow-sm" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-2 rounded-full border border-white/60 bg-white/70 px-3 py-2 shadow-inner shadow-white/40">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -38,17 +37,13 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            {/* <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
-              <Link href="#">Prijava</Link>
-            </Button> */}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+            <Button className="rounded-full bg-primary px-6 text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90" asChild>
               <Link href="#kontakt">Započnite besplatno</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="rounded-full border border-white/60 bg-white/70 p-2 text-foreground shadow-sm lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -56,25 +51,21 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="surface-card mt-3 rounded-3xl px-6 py-5 lg:hidden">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                  className="rounded-2xl px-4 py-3 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start" asChild>
-                  <Link href="#">Prijava</Link>
-                </Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+              <div className="flex flex-col gap-3 border-t border-border/70 pt-4">
+                <Button className="rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90" asChild>
                   <Link href="#kontakt">Započnite besplatno</Link>
                 </Button>
               </div>

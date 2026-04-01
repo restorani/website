@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,12 +8,10 @@ export function Footer() {
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold text-foreground">
-                ORDER<span className="text-primary">A</span>
-              </span>
+            <Link href="/" className="inline-block">
+              <Image src="/ordera-Photoroom.png" alt="ORDERA Logo" width={200} height={60} priority className="-mt-12 drop-shadow-sm object-contain" />
             </Link>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-2">
               Kompletno rešenje za upravljanje restoranima i kafićima. 
               Digitalizujte vaše poslovanje danas.
             </p>
@@ -63,12 +62,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-muted-foreground text-sm">
             &copy; {new Date().getFullYear()} ORDERA. Sva prava zadržana.
-          </p>
-          <p className="text-muted-foreground text-sm">
-            Napravljeno sa ljubavlju u Srbiji
           </p>
         </div>
       </div>

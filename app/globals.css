@@ -10,7 +10,7 @@
   --card-foreground: oklch(0.15 0.01 270);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.01 270);
-  --primary: oklch(0.65 0.24 145);
+  --primary: oklch(0.606 0.25 292.717);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.96 0.01 270);
   --secondary-foreground: oklch(0.15 0.01 270);
@@ -37,6 +37,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.65 0.24 145);
+  --grid-line: color-mix(in oklab, var(--primary) 12%, transparent);
+  --spotlight-primary: color-mix(in oklab, var(--primary) 24%, transparent);
+  --spotlight-accent: color-mix(in oklab, var(--accent) 30%, transparent);
+  --glass-border: color-mix(in oklab, var(--foreground) 8%, white);
 }
 
 .dark {
@@ -117,10 +121,115 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
+  *::selection {
+    background: color-mix(in oklab, var(--primary) 28%, white);
+    color: var(--foreground);
+  }
+
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, var(--spotlight-primary), transparent 28%),
+      radial-gradient(circle at top right, var(--spotlight-accent), transparent 24%),
+      linear-gradient(180deg, color-mix(in oklab, var(--background) 96%, white) 0%, var(--background) 45%, color-mix(in oklab, var(--background) 92%, var(--secondary)) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .section-shell {
+    position: relative;
+    overflow: clip;
+  }
+
+  .section-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, transparent 0, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, transparent 0, var(--grid-line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.35;
+    pointer-events: none;
+    mask-image: linear-gradient(180deg, transparent, black 10%, black 90%, transparent);
+  }
+
+  .section-spotlight::after {
+    content: "";
+    position: absolute;
+    inset: auto auto -8rem -8rem;
+    width: 20rem;
+    height: 20rem;
+    background: radial-gradient(circle, var(--spotlight-primary), transparent 70%);
+    filter: blur(10px);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .surface-card {
+    background: color-mix(in oklab, var(--card) 82%, white);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      0 18px 60px color-mix(in oklab, var(--foreground) 8%, transparent),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(18px);
+  }
+
+  .surface-card-dark {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
+      color-mix(in oklab, var(--foreground) 92%, black);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 24px 80px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em];
+    background: color-mix(in oklab, var(--primary) 12%, white);
+    color: color-mix(in oklab, var(--primary) 82%, black);
+    border: 1px solid color-mix(in oklab, var(--primary) 18%, white);
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 56px, 0);
+    filter: blur(10px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.8s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
   }
 }

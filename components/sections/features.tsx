@@ -62,10 +62,10 @@ const features = [
 
 export function Features() {
   return (
-    <section id="funkcije" className="py-24 bg-secondary/30">
+    <section id="funkcije" className="section-shell relative py-28">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary font-semibold mb-4">Funkcionalnosti</p>
+          <p className="eyebrow mb-5">Funkcionalnosti</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Sve što vam treba za uspešan ugostiteljski objekat
           </h2>
@@ -79,12 +79,12 @@ export function Features() {
           {features.map((feature) => (
             <div 
               key={feature.title}
-              className="group bg-card rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="surface-card group rounded-[1.75rem] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_28px_70px_rgba(15,23,42,0.12)]"
             >
-              <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+              <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${feature.color} shadow-sm transition-transform group-hover:scale-110`}>
                 <feature.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+              <h3 className="mb-3 text-xl font-semibold text-foreground">{feature.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           ))}

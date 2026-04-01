@@ -1,13 +1,13 @@
 const stats = [
-  { value: "500+", label: "Aktivnih lokacija", description: "širom regiona" },
-  { value: "2M+", label: "Porudžbina mesečno", description: "obrađeno kroz sistem" },
-  { value: "98%", label: "Zadovoljnih klijenata", description: "preporučuje ORDERA" },
+  { value: "20+", label: "Aktivnih lokacija", description: "širom regiona" },
+  { value: "200 000+", label: "Porudžbina mesečno", description: "obrađeno kroz sistem" },
+  { value: "100%", label: "Zadovoljnih klijenata", description: "preporučuje ORDERA" },
   { value: "30%", label: "Povećanje efikasnosti", description: "u proseku" },
 ]
 
 export function Stats() {
   return (
-    <section className="py-16 bg-primary">
+    <section className="py-16 bg-gradient-to-r from-primary to-accent">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat) => (

@@ -53,10 +53,10 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="cene" className="py-24 bg-secondary/30">
+    <section id="cene" className="section-shell py-28">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary font-semibold mb-4">Cenovnik</p>
+          <p className="eyebrow mb-5">Cenovnik</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Transparentne cene bez skrivenih troškova
           </h2>
@@ -69,14 +69,14 @@ export function Pricing() {
           {plans.map((plan) => (
             <div 
               key={plan.name}
-              className={`relative bg-card rounded-2xl p-8 border ${
+              className={`relative rounded-[2rem] p-8 ${
                 plan.popular 
-                  ? 'border-primary shadow-xl scale-105' 
-                  : 'border-border'
+                  ? 'surface-card scale-[1.03] border-primary/40 shadow-[0_35px_100px_rgba(15,23,42,0.16)]' 
+                  : 'surface-card'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25">
                   Najpopularniji
                 </div>
               )}
@@ -105,8 +105,8 @@ export function Pricing() {
               <Button 
                 className={`w-full ${
                   plan.popular 
-                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
-                    : 'bg-secondary hover:bg-secondary/80 text-secondary-foreground'
+                    ? 'rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90' 
+                    : 'rounded-full bg-secondary/80 text-secondary-foreground hover:bg-secondary'
                 }`}
                 size="lg"
                 asChild

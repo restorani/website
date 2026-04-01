@@ -1,46 +1,53 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, CalendarDays, CheckCircle2, Play, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-      {/* Background decorative elements */}
+    <section className="section-shell section-spotlight relative flex min-h-[96vh] items-center overflow-hidden bg-transparent pt-6">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 -left-20 w-80 h-80 bg-accent/30 rounded-full blur-3xl" />
+        <div className="absolute left-[6%] top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute right-[8%] top-28 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-64 w-[34rem] -translate-x-1/2 rounded-full bg-chart-5/20 blur-3xl" />
       </div>
       
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container relative z-10 mx-auto px-4 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="space-y-8">
-            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Novo: AI asistent za restorane
-            </div> */}
+            <div className="eyebrow">
+              <Sparkles className="h-4 w-4" />
+              Digitalni operativni sistem za ugostiteljstvo
+            </div>
+
+            <div className="space-y-6">
+              <h1 className="max-w-3xl text-5xl font-bold leading-[0.95] text-foreground text-balance md:text-6xl lg:text-7xl">
+                Sve što vašem
+                <span className="bg-gradient-to-r from-primary via-chart-3 to-accent bg-clip-text text-transparent"> kafiću/restoranu </span>
+                treba na <span className="text-foreground border-b-2 border-accent">jednom</span> mestu
+              </h1>
+              
+              <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                ORDERA objedinjuje POS, tablet naručivanje, inventar, rezervacije i analitiku u jedan elegantan tok rada za vaš tim.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-sm text-foreground/80">
+              <div className="surface-card rounded-full px-4 py-2">Brža usluga bez papira</div>
+              <div className="surface-card rounded-full px-4 py-2">Kontrola lokacija u realnom vremenu</div>
+              <div className="surface-card rounded-full px-4 py-2">Pokretanje za manje od 24h</div>
+            </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground text-balance">
-              Sve što vašem
-              <span className="text-primary"> restoranu </span>
-              treba na jednom mestu
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              ORDERA je kompletno rešenje za upravljanje kafićima i restoranima - 
-              od naručivanja putem tableta do upravljanja inventarom i zakazivanja.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8" asChild>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button size="lg" className="rounded-full bg-primary px-8 text-primary-foreground shadow-xl shadow-primary/25 hover:bg-primary/90" asChild>
                 <Link href="#kontakt">
                   Započnite besplatno
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary" asChild>
+              <Button size="lg" variant="outline" className="rounded-full border-white/70 bg-white/70 px-8 hover:bg-white" asChild>
                 <Link href="#demo">
                   <Play className="mr-2 h-5 w-5" />
                   Pogledajte demo
@@ -48,18 +55,16 @@ export function Hero() {
               </Button>
             </div>
             
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-foreground">500+</p>
+            <div className="grid gap-4 pt-4 sm:grid-cols-3">
+              <div className="surface-card rounded-3xl px-5 py-4">
+                <p className="text-3xl font-bold text-foreground">20+</p>
                 <p className="text-sm text-muted-foreground">Aktivnih lokacija</p>
               </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-foreground">98%</p>
+              <div className="surface-card rounded-3xl px-5 py-4">
+                <p className="text-3xl font-bold text-foreground">100%</p>
                 <p className="text-sm text-muted-foreground">Zadovoljnih klijenata</p>
               </div>
-              <div className="w-px h-12 bg-border hidden sm:block" />
-              <div className="text-center hidden sm:block">
+              <div className="surface-card rounded-3xl px-5 py-4">
                 <p className="text-3xl font-bold text-foreground">24/7</p>
                 <p className="text-sm text-muted-foreground">Podrška</p>
               </div>
@@ -67,54 +72,50 @@ export function Hero() {
           </div>
           
           <div className="relative">
-            <div className="relative bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
-              {/* Mock POS Interface */}
-              {/* <div className="bg-foreground/5 px-4 py-3 border-b border-border flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                <div className="w-3 h-3 rounded-full bg-accent" />
-                <div className="w-3 h-3 rounded-full bg-primary" />
-                <span className="ml-4 text-sm text-muted-foreground">ORDERA POS</span>
+            <div className="absolute inset-x-10 top-8 h-full rounded-[2rem] bg-gradient-to-b from-primary/20 via-accent/10 to-transparent blur-3xl" />
+
+            <div className="surface-card relative overflow-hidden rounded-[2rem] p-4 shadow-[0_30px_120px_rgba(15,23,42,0.15)]">
+              <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/70 to-transparent" />
+              <div className="mb-4 flex items-center justify-between rounded-2xl border border-white/60 bg-white/75 px-4 py-3 backdrop-blur">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Današnji promet</p>
+                  <p className="text-xs text-muted-foreground">Usklađeno kroz sve uređaje</p>
+                </div>
+                <div className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+                  +18.4%
+                </div>
               </div>
-              <div className="p-6 space-y-4">
-                <div className="grid grid-cols-3 gap-3">
-                  {['Espresso', 'Cappuccino', 'Latte', 'Americano', 'Macchiato', 'Mocha'].map((item, i) => (
-                    <div 
-                      key={item} 
-                      className={`p-4 rounded-xl text-center transition-all hover:scale-105 cursor-pointer ${
-                        i === 1 ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground hover:bg-primary/10'
-                      }`}
-                    >
-                      <p className="text-sm font-medium">{item}</p>
-                      <p className="text-xs opacity-70">{(180 + i * 20)} RSD</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="border-t border-border pt-4 mt-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-muted-foreground">Sto 5</span>
-                    <span className="text-sm text-muted-foreground">3 stavke</span>
+
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/60 bg-card">
+                <Image src="/orderasite1.png" alt="ORDERA POS Mockup" width={600} height={400} className="w-full h-auto object-cover" />
+              </div>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/60 bg-white/80 p-4 backdrop-blur">
+                  <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                    Narudžbine bez greške
                   </div>
-                  <div className="flex justify-between items-center text-lg font-bold">
-                    <span>Ukupno:</span>
-                    <span className="text-primary">580 RSD</span>
-                  </div>
+                  <p className="text-sm text-muted-foreground">Konobari šalju stavke direktno u kuhinju i na šank bez duplih unosa.</p>
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Naplati
-                </Button>
-              </div> */}
-              <Image src="/orderasite1.png" alt="ORDERA POS Mockup" width={600} height={400} className="w-full h-auto object-cover" />
+                <div className="rounded-2xl border border-white/60 bg-white/80 p-4 backdrop-blur">
+                  <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <CalendarDays className="h-4 w-4 text-chart-3" />
+                    Pametne rezervacije
+                  </div>
+                  <p className="text-sm text-muted-foreground">Rezervacije, raspored stolova i kapaciteti ostaju usklađeni u realnom vremenu.</p>
+                </div>
+              </div>
             </div>
             
-            {/* Floating notification card */}
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl shadow-lg border border-border p-4 animate-pulse">
+            <div className="surface-card absolute -bottom-10 -left-3 rounded-2xl p-4 sm:-left-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/50">
                   <span className="text-primary text-lg">✓</span>
                 </div>
-                <div>
+                <div className="p-2 bg-primary/50 rounded-2xl animate-pulse">
                   <p className="text-sm font-medium text-foreground">Nova porudžbina</p>
-                  <p className="text-xs text-muted-foreground">Sto 12 - 3 artikla</p>
+                  <p className="text-xs text-foreground">Sto 12 - 3 artikla</p>
                 </div>
               </div>
             </div>

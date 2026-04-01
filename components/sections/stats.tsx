@@ -7,7 +7,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-16 bg-gradient-to-r from-primary to-accent">
+    <section className="py-16 bg-linear-to-r from-primary to-accent">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat) => (

@@ -23,7 +23,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="section-shell py-28">
+    <section className="section-shell py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="eyebrow mb-5">Iskustva korisnika</p>
@@ -50,7 +50,7 @@ export function Testimonials() {
                 &ldquo;{testimonial.content}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/25">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary/20 to-accent/25">
                   <span className="text-primary font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>

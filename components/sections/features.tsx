@@ -62,7 +62,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="funkcije" className="section-shell relative py-28">
+    <section id="funkcije" className="section-shell relative py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="eyebrow mb-5">Funkcionalnosti</p>

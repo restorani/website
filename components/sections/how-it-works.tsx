@@ -23,7 +23,7 @@ export function HowItWorks() {
   ]
 
   return (
-    <section className="section-shell section-spotlight py-28">
+    <section className="section-shell section-spotlight py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="eyebrow mb-5">Kako funkcioniše</p>
@@ -39,10 +39,10 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <div key={step.number} className="relative">
               {index < steps.length - 1 && (
-                <div className="absolute left-full top-14 z-0 hidden h-px w-full -translate-x-1/2 bg-gradient-to-r from-primary/50 to-transparent lg:block" />
+                <div className="absolute left-full top-14 z-0 hidden h-px w-full -translate-x-1/2 bg-linear-to-r from-primary/50 to-transparent lg:block" />
               )}
-              <div className="surface-card relative z-10 h-full rounded-[2rem] p-7 text-center">
-                <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-[1.75rem] bg-gradient-to-br from-primary/20 via-primary/10 to-accent/20 shadow-inner shadow-white/60">
+              <div className="surface-card relative z-10 h-full rounded-4xl p-7 text-center">
+                <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-[1.75rem] bg-linear-to-br from-primary/20 via-primary/10 to-accent/20 shadow-inner shadow-white/60">
                   <span className="text-3xl font-bold text-primary">{step.number}</span>
                 </div>
                 <h3 className="mb-3 text-xl font-semibold text-foreground">{step.title}</h3>

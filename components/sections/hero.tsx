@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-[6%] top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
         <div className="absolute right-[8%] top-28 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 h-64 w-[34rem] -translate-x-1/2 rounded-full bg-chart-5/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-64 w-136 -translate-x-1/2 rounded-full bg-chart-5/20 blur-3xl" />
       </div>
       
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
@@ -25,7 +25,7 @@ export function Hero() {
             <div className="space-y-6">
               <h1 className="max-w-3xl text-5xl font-bold leading-[0.95] text-foreground text-balance md:text-6xl lg:text-7xl">
                 Sve što vašem
-                <span className="bg-gradient-to-r from-primary via-chart-3 to-accent bg-clip-text text-transparent"> kafiću/restoranu </span>
+                <span className="bg-linear-to-r from-primary via-chart-3 to-accent bg-clip-text text-transparent"> kafiću/restoranu </span>
                 treba na <span className="text-foreground border-b-2 border-accent">jednom</span> mestu
               </h1>
               
@@ -72,10 +72,10 @@ export function Hero() {
           </div>
           
           <div className="relative">
-            <div className="absolute inset-x-10 top-8 h-full rounded-[2rem] bg-gradient-to-b from-primary/20 via-accent/10 to-transparent blur-3xl" />
+            <div className="absolute inset-x-10 top-8 h-full rounded-4xl bg-linear-to-b from-primary/20 via-accent/10 to-transparent blur-3xl" />
 
-            <div className="surface-card relative overflow-hidden rounded-[2rem] p-4 shadow-[0_30px_120px_rgba(15,23,42,0.15)]">
-              <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/70 to-transparent" />
+            <div className="surface-card relative overflow-hidden rounded-4xl p-4 shadow-[0_30px_120px_rgba(15,23,42,0.15)]">
+              <div className="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-white/70 to-transparent" />
               <div className="mb-4 flex items-center justify-between rounded-2xl border border-white/60 bg-white/75 px-4 py-3 backdrop-blur">
                 <div>
                   <p className="text-sm font-semibold text-foreground">Današnji promet</p>
@@ -86,7 +86,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/60 bg-card">
+              <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-card">
                 <Image src="/orderasite1.png" alt="ORDERA POS Mockup" width={600} height={400} className="w-full h-auto object-cover" />
               </div>
 

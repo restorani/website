@@ -4,16 +4,16 @@ import Link from "next/link"
 
 export function CTA() {
   return (
-    <section id="kontakt" className="section-shell relative py-28">
+    <section id="kontakt" className="section-shell relative py-16">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-[10%] top-8 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
         <div className="absolute bottom-0 right-[8%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
       </div>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="surface-card-dark relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] px-6 py-14 text-center sm:px-10 lg:px-14">
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-40 bg-gradient-to-b from-white/10 to-transparent" />
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] px-6 py-14 text-center sm:px-10 lg:px-14">
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-40 bg-linear-to-b from-white/10 to-transparent" />
           <div className="relative z-10">
-            <div className="eyebrow mb-6 border-white/10 bg-white/10 text-foreground">Kontakt i Demo</div>
+            <div className="eyebrow text-xl mb-6 border-black/60 bg-white/10 text-foreground">Kontakt i Demo</div>
             <h2 className="mb-6 text-3xl font-bold text-balance text-foreground md:text-4xl lg:text-5xl">
               Spremni da digitalizujete vaš restoran?
             </h2>
